@@ -36,10 +36,10 @@
                                 <a class="nav-link disabled nav-block__nav-link" href="#">contacts</a>
                             </li>
                             <li class="nav-item nav-block__nav-item">
-                                <a class="nav-link disabled nav-block__nav-link" href="#">sign up</a>
+                                <a class="nav-link disabled nav-block__nav-link" href="{{ route('register') }}">sign up</a>
                             </li>
                             <li class="nav-item nav-block__nav-item">
-                                <a class="nav-link disabled nav-block__nav-link" href="#">login</a>
+                                <a class="nav-link disabled nav-block__nav-link"  href="{{ route('login') }}">login</a>
                             </li>
 
                         </ul>

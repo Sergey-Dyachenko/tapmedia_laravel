@@ -52,6 +52,25 @@ class ClientsController extends Controller
         return redirect('/');
     }
 
+    public function send(Request $request)
+    {
+        $data = $request->only(['from', 'to']);
+        $data['to'] .= ' 23:59:59';
+        $clients = Client::whereBetween('created_at', $data)->get();
+        foreach ($clients as $client) {
+
+        Mail::send('emails.send', ['user' => $client], function($message) use ($client)
+        {
+            $message->to($client->email);
+            $message->subject('Welcome to Vyadd');
+            $message->from('sender@domain.net');
+        });
+        }
+        return view('home', compact('clients', 'data'));
+    }
+
+
+
     /**
      * Display the specified resource.
      *
