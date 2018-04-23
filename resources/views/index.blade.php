@@ -49,7 +49,7 @@
             </div>
             <div class="row you-victorious-row">
                 <div class="col-md-6 offset-md-6 you-victorious-block">
-                    <img class="you-victorious-block__img" src="img/logo.png" alt="">
+                    <img class="you-victorious-block__img" src="img/logo.svg"  alt="">
                     <h1 class="you-victorious-block__title">your victorious ads</h1>
                     <a class="you-victorious-block__signup" href="#">sign up</a>
                 </div>

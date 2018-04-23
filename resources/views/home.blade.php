@@ -21,7 +21,7 @@
                                 <label for="">from</label><input class="send-form__date" name="from" data-date-format="yyyy-mm-dd" id="datepicker_from">
                                 <label for="">to</label><input class="send-form__date" name="to"  data-date-format="yyyy-mm-dd" id="datepicker_to">
                                 <label style="display: block;" for="comment">Mesaage:</label>
-                                <textarea class="send-form__message" rows="10" cols="70" id="comment"></textarea>
+                                <textarea class="send-form__message" name="text_message" rows="10" cols="70" id="comment"></textarea>
                                 <input style="display: block; padding: 5px 20px;" class="send-form__submit btn" type="submit" value="send"/>
                             </form>
 

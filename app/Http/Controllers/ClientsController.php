@@ -54,16 +54,18 @@ class ClientsController extends Controller
 
     public function send(Request $request)
     {
+        $text_message = request('text_message');
         $data = $request->only(['from', 'to']);
         $data['to'] .= ' 23:59:59';
         $clients = Client::whereBetween('created_at', $data)->get();
         foreach ($clients as $client) {
-
-        Mail::send('emails.send', ['user' => $client], function($message) use ($client)
+        Mail::send([], [], function($message) use ($client, $text_message)
         {
             $message->to($client->email);
             $message->subject('Welcome to Vyadd');
-            $message->from('sender@domain.net');
+            $text_message = str_replace('{NAME}', $client->name, $text_message);
+            $message->setBody($text_message);
+            $message->from('vyadd@mail.com');
         });
         }
         return view('home', compact('clients', 'data'));

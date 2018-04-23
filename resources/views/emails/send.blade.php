@@ -15,5 +15,6 @@
     </head>
     <body>
        <h1>Send!</h1>
+        <p>Hello {{name}}</p>
     </body>
 </html>
