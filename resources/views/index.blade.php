@@ -13,10 +13,10 @@
 </head>
 <body>
 <header>
-    <section class="header-section">
+    <section id="header-section" class="header-section">
         <div class="container">
             <div class="row">
-                <nav class="navbar navbar-expand-md fixed-top container">
+                <nav class="navbar navbar-expand-md fixed-top container" id="change">
                     <button class="navbar-toggler collapsed " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
                     </button>
@@ -24,22 +24,22 @@
                     <div class="navbar-collapse collapse" id="navbarsExampleDefault" style="">
                         <ul class="navbar-nav nav-block">
                             <li class="nav-item active nav-block__nav-item">
-                                <a class="nav-link disabled nav-block__nav-link" href="#">about <span class="sr-only">(current)</span></a>
+                                <a class="nav-link disabled nav-block__nav-link" href="#" id="about-menu-text">about <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item nav nav-block__nav-item">
-                                <a class="nav-link disabled nav-block__nav-link" href="#">for publishers</a>
+                                <a class="nav-link disabled nav-block__nav-link" id="forpublishers-menu-text" href="#">for publishers</a>
                             </li>
                             <li class="nav-item nav-block__nav-item">
-                                <a class="nav-link disabled nav-block__nav-link" href="#">for advertisers</a>
+                                <a class="nav-link disabled nav-block__nav-link" id="foradvertisers-menu-text" href="#">for advertisers</a>
                             </li>
                             <li class="nav-item nav-block__nav-item">
-                                <a class="nav-link disabled nav-block__nav-link" href="#">contacts</a>
+                                <a class="nav-link disabled nav-block__nav-link" id="contacts-menu-text" href="#contacts-section">contacts</a>
                             </li>
                             <li class="nav-item nav-block__nav-item">
-                                <a class="nav-link disabled nav-block__nav-link" href="{{ route('register') }}">sign up</a>
+                                <a class="nav-link disabled nav-block__nav-link" href="{{route('register')}}">sign up</a>
                             </li>
                             <li class="nav-item nav-block__nav-item">
-                                <a class="nav-link disabled nav-block__nav-link"  href="{{ route('login') }}">login</a>
+                                <a class="nav-link disabled nav-block__nav-link" href="{{route('login')}}">login</a>
                             </li>
 
                         </ul>
@@ -49,7 +49,7 @@
             </div>
             <div class="row you-victorious-row">
                 <div class="col-md-6 offset-md-6 you-victorious-block">
-                    <img class="you-victorious-block__img" src="img/logo.png"  alt="">
+                    <img class="you-victorious-block__img" src="dist/img/logo.svg"  alt="">
                     <h1 class="you-victorious-block__title">your victorious ads</h1>
                     <a class="you-victorious-block__signup" href="#">sign up</a>
                 </div>
@@ -58,7 +58,7 @@
     </section>
 </header>
 <main class="main-block">
-    <section class="about-section">
+    <section id="about-section" class="about-section">
         <div class="container">
             <div class="row about-row-one">
                 <div class="col-md-6 about-row-one__text">
@@ -84,8 +84,11 @@
             </div>
         </div>
     </section>
-    <section class="forpublishers-section">
+    <section id="forpublishers-section" class="forpublishers-section">
         <div class="container">
+            <div class="background-text" >
+                <p><span>FOR</span></br></span>PUBLISHERS</p>
+            </div>
             <div class="row forpublishers-row-one">
                 <div class="col-md-6 offset-md-6 forpublishers-row-one__text">
                     The main goal of each publisher is to adjust the flow of their mobile traffic so that they bring
@@ -103,7 +106,7 @@
             </div>
         </div>
     </section>
-    <section class="foradvertisers-section">
+    <section id="foradvertisers-section" class="foradvertisers-section">
         <div class="container">
             <div class="row foradvertisers-row-one">
                 <div class="col-md-6 offset-md-6 foradvertisers-row-one__text">
@@ -124,7 +127,7 @@
     </section>
 </main>
 <footer>
-    <section class="contacts-section">
+    <section id="contacts-section" class="contacts-section">
         <div class="container">
             <div class="row contacts-row-one">
                 <div class="col-md-6 offset-md-6 contacts-row-one__text">
@@ -165,20 +168,8 @@
         <input class="popup-form__submit btn" type="submit" value="download"/>
     </form>
 </div>
+
 <div id="overlay"></div>
 </body>
-<script>
-    $(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
-        window.setTimeout( function(){ // лoвим клик пo ссылки с id="go"
-            $('#modal_form').css('display', 'flex');
-            $('#overlay').css('display', 'block');
-            console.log('popup');
-        }, 5000);
-        /* Зaкрытие мoдaльнoгo oкнa, тут делaем тo же сaмoе нo в oбрaтнoм пoрядке */
-        $('#modal_close, #overlay').click( function(){ // лoвим клик пo крестику или пoдлoжке
-            $('#modal_form').css('display', 'none');
-            $('#overlay').css('display', 'none');
-        });
-    });
-</script>
+<script src="js/all.js"></script>
 </html>
